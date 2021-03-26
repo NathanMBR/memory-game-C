@@ -214,7 +214,7 @@ int verifyWin (char **board, int *x, int *y) {
 	return win;
 }
 
-// Does the cicle of the gameplay
+// Does the cycle of the gameplay
 void loopGame(char **board, char **memBoard, int *x, int *y, int *score, int *isGameRunning) {
 	if (*isGameRunning == 1) {
 		system("cls");
