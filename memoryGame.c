@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-#include <string.h>
+#include <windows.h>
 
 #define ASCII 65
 #define SCORE_WIN 100
@@ -43,10 +43,6 @@ void showScore(int *score) {
 // Shows temporarily the board in the screen. Time is based in difficulty
 void showBoardTemp(char **memBoard, int *x, int *y, int *difficulty) {
 	int sleepTime = 8 - 2 * *difficulty, i, j;
-	char command[13] = "timeout /T ", sleepTimeStr[2];
-	
-	snprintf(sleepTimeStr, 13, "%i", sleepTime);
-	strcat(command, sleepTimeStr);
 	
 	printf("You have %i seconds to memorize:\n\n", sleepTime);
 	
@@ -56,7 +52,7 @@ void showBoardTemp(char **memBoard, int *x, int *y, int *difficulty) {
 		printf("\n");
 	}
 	
-	system(command);
+	Sleep(sleepTime * 1000);
 	system("cls");
 }
 
